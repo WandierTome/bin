@@ -29,7 +29,7 @@ alias rm='rm -frvi'
 ##  GIT  -----------------------------------------------------------------------
 alias gstatus='git status'
 alias gadd='git add .'
-alias gcommit='git commit'
+alias gcommit='git commit -a -m'
 alias gpush='git push'
 alias gpull='git pull'
 alias gclone='git clone'
