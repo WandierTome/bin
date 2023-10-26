@@ -1,0 +1,62 @@
+##  -----------------------------------------------------------------------  ##
+##  Meus aliases e Funções
+##  -----------------------------------------------------------------------  ##
+
+## SUDO  ----------------------------------------------------------------------
+alias sd='sudo'
+
+##  LS  -----------------------------------------------------------------------
+alias ls='exa -G  --icons'
+alias l='ls -hl' # sem aspas, escape e espaço
+alias l.='l -d .'
+alias ll='l -C'
+alias la='l && l.'
+alias lt='exa -T'
+
+## CD  ------------------------------------------------------------------------
+alias cd..=' cd ..'
+alias ..='cd ..'
+alias cd~='cd ~'
+alias ~='cd ~'
+alias cd-='cd -'
+
+##  CP  -----------------------------------------------------------------------
+alias cp='cp -frvi'
+
+##  RM  -----------------------------------------------------------------------
+alias rm='rm -frvi'
+
+##  GIT  -----------------------------------------------------------------------
+alias gtatus='git status'
+alias gadd='git add .'
+alias gcommit='git commit'
+alias gpush='git push'
+alias gpull='git pull'
+alias gclone='git clone'
+alias ginit='git init'
+
+##  MKDIR  -----------------------------------------------------------------------
+alias ='mkdir -p'
+##  CP  -----------------------------------------------------------------------
+##  CP  -----------------------------------------------------------------------
+
+##  APT  ##
+alias install='sudo apt install'
+alias remove='sudo apt --purge remove'
+alias autoremove='sudo apt autoremove'
+alias update='sudo apt upgrade'
+alias dupgrade='sudo apt dist-upgrade'
+alias upall='sudo apt update; sudo apt dist-upgrade'
+alias cl='sudo apt clean'
+alias atcl='sud o apt autoclean'
+
+##  Funçõs
+
+# Criat doretotio e entrat
+mkcd() { mkdir $1; cd $1; }
+
+# Criar .tar.gz
+comprimir() { tar -zcvf $1.tar.gz $1; }
+
+# Extrair .tar.gz
+extrair() { tar -xvsf $1; } 
