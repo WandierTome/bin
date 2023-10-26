@@ -27,7 +27,7 @@ alias cp='cp -frvi'
 alias rm='rm -frvi'
 
 ##  GIT  -----------------------------------------------------------------------
-alias gtatus='git status'
+alias gstatus='git status'
 alias gadd='git add .'
 alias gcommit='git commit'
 alias gpush='git push'
