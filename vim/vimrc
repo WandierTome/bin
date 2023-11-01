@@ -15,7 +15,7 @@ set confirm
 set hidden
 set splitbelow
 set splitright
-" set mouse=a " Eu não gosto!
+set mouse=a " Eu não gosto!
 " Caminhos --------------------------------------------------------------------
 set path=.,**
 set noswapfile
