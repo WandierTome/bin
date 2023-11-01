@@ -1,0 +1,86 @@
+" A definição de compatibilidade não é necessária no Debian! ------------------
+set nocompatible
+" Definição das cores do terminal ---------------------------------------------
+if has('termguicolors')
+   set termguicolors
+endif
+" Configurações gerais --------------------------------------------------------
+filetype plugin indent on
+syntax on
+set title
+set encoding=utf-8
+set backspace=indent,eol,start " Não precisa no Debian
+set noerrorbells
+set confirm
+set hidden
+set splitbelow
+set splitright
+" set mouse=a " Eu não gosto!
+" Caminhos --------------------------------------------------------------------
+set path=.,**
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+" Variáveis -------------------------------------------------------------------
+let $RCPATH = '~/.vim/'
+let $RC = $RCPATH.'vimrc'
+" Numeração de linhas ---------------------------------------------------------
+set number 
+set relativenumber
+set scrolloff=2
+set cursorline
+" Mudança do cursor -----------------------------------------------------------
+let &t_SI="\e[6 q"
+let &t_EI="\e[2 q"
+" Indentação ------------------------------------------------------------------
+set autoindent
+set smartindent
+" Tabulações ------------------------------------------------------------------
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" Busca -----------------------------------------------------------------------
+set ignorecase
+set smartcase
+set incsearch
+set hls     " Será alternado no mapeamento de teclas...
+let @/ = "" " Será redefinido no mapeamento de teclas...
+" Menu da barra de status -----------------------------------------------------
+set wildmenu
+set wildmode=longest,full
+set wildoptions=pum
+" Barra de status -------------------------------------------------------------
+set noshowmode   " Negado para as definições da barra de status...
+set laststatus=2
+" Quebra de linha -------------------------------------------------------------
+set nowrap       " Negado para o mapeamento da quebra de linhas...
+set linebreak
+" Caracteres de preenchimento -------------------------------------------------
+set nolist       " Negado para o mapeamento dos caracteres invisíveis... 
+set listchars=tab:›-,space:·,trail:◀,eol:↲
+set fillchars=vert:│,fold:-,eob:~,lastline:@
+" Ortografia ------------------------------------------------------------------
+set nospell      " Negado para o mapeamento da correção ortográfica...
+set spelllang=pt_br,en
+" Menu do modo insert ---------------------------------------------------------
+set complete+=kspell
+set completeopt=menuone,longest
+set shortmess+=c
+" Esquema de cores ------------------------------------------------------------
+" https://github.com/sainnhe/edge.git 
+" set background=dark
+" colorscheme edge
+" -----------------------------------------------------------------------------
+colorscheme habamax
+" Arquivos externos -----------------------------------------------------------
+execute 'source '.$RCPATH.fnameescape('autocmds.vim')
+execute 'source '.$RCPATH.fnameescape('customcolors.vim')
+execute 'source '.$RCPATH.fnameescape('statusbar.vim')
+execute 'source '.$RCPATH.fnameescape('mappings.vim')
+" -----------------------------------------------------------------------------
+execute 'source '.$RCPATH.fnameescape('icomplete.vim')
+" -----------------------------------------------------------------------------
+"
+"
