@@ -1,0 +1,68 @@
+##  -----------------------------------------------------------------------  ##
+##  Meus aliases e Funções
+##  -----------------------------------------------------------------------  ##
+
+## SUDO  ----------------------------------------------------------------------
+alias sd='sudo'
+##  MKDIR  --------------------------------------------------------------------
+alias mkdir='mkdir -p'
+
+##  LS  -----------------------------------------------------------------------
+alias ls='eza -G  --icons'
+alias l='ls -hl' # sem aspas, escape e espaço
+alias l.='l -d .'
+alias ll='l -C'
+alias la='l && l.'
+alias lt='exa -T'
+
+## CD  ------------------------------------------------------------------------
+alias cd..=' cd ..'
+alias ..='cd ..'
+alias cd~='cd ~'
+alias ~='cd ~'
+alias cd-='cd -'
+
+##  CP  -----------------------------------------------------------------------
+alias cp='cp -rfvi'
+
+##  RM  -----------------------------------------------------------------------
+alias rm='rm -rfvi'
+
+##  GIT  ----------------------------------------------------------------------
+alias gstatus='git status'
+alias gadd='git add .'
+alias gcommit='git commit -a -m'
+alias gpush='git push'
+alias gpull='git pull'
+alias gclone='git clone'
+alias ginit='git init'
+
+##  CP  -----------------------------------------------------------------------
+
+##  Vagrant  -----------------------------------------------------------------------
+alias vinit='vagrant init -m'
+alias vup='vagrant up'
+alias vssh='vagrant ssh'
+alias vhalt='vagrant halt'
+alias vreload='vagrant reload'
+alias vdestroy='vagrant destroy'
+alias vstatus='vagrant status'
+alias vgstatus='vagrant global-status'
+
+##  YAY  ##
+alias install='yay -S'
+alias remove='yay -Rn'
+alias up='yay -Syyu'
+alias clcache='yay -Scc'
+alias procurar='yay -Ss | grep'
+
+##  Funçõs
+
+# Criat doretotio e entrat
+mkcd() { mkdir $1; cd $1; }
+
+# Criar .tar.gz
+comprimir() { tar -zcvf $1.tar.gz $1; }
+
+# Extrair .tar.gz
+extrair() { tar -xvsf $1; } 
