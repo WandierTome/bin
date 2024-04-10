@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+DATA_ATUAL=$(date +'%d-%m-%Y')
+header="#!/usr/bin/env bash
+# -----------------------------------------------------------------------------
+# Script    :
+# Descrição :
+# Autor     : Wandier Tome <wad.tome@gmail.com>
+# Data      : $DATA_ATUAL
+# Versão    : 0.0.1
+# -----------------------------------------------------------------------------
+"
+
+[[ $# -ne 1 ]] && echo "Preciso de *um NOME* para o arquivo!" && exit 1
+[[ -f $1 ]] && echo "Opá! arquivo *ja existe! Saindo!*" && exit 1
+
+echo "$header" > $1
+chmod +x $1
+vim $1
+
+exit 0
