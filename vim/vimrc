@@ -9,13 +9,13 @@ filetype plugin indent on
 syntax on
 set title
 set encoding=utf-8
-set backspace=indent,eol,start " Não precisa no Debian
+set backspace=indent,eol,start 
 set noerrorbells
 set confirm
 set hidden
 set splitbelow
 set splitright
-set mouse=a " Eu não gosto!
+set mouse=a
 " Caminhos --------------------------------------------------------------------
 set path=.,**
 set noswapfile
@@ -41,12 +41,13 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set colorcolumn=80
 " Busca -----------------------------------------------------------------------
 set ignorecase
 set smartcase
 set incsearch
-set hls     " Será alternado no mapeamento de teclas...
-let @/ = "" " Será redefinido no mapeamento de teclas...
+set hls 
+let @/ = ""
 " Menu da barra de status -----------------------------------------------------
 set wildmenu
 set wildmode=longest,full
@@ -55,24 +56,20 @@ set wildoptions=pum
 set noshowmode   " Negado para as definições da barra de status...
 set laststatus=2
 " Quebra de linha -------------------------------------------------------------
-set nowrap       " Negado para o mapeamento da quebra de linhas...
+set nowrap 
 set linebreak
 " Caracteres de preenchimento -------------------------------------------------
-set nolist       " Negado para o mapeamento dos caracteres invisíveis... 
+set nolist 
 set listchars=tab:›-,space:·,trail:◀,eol:↲
 set fillchars=vert:│,fold:-,eob:~,lastline:@
 " Ortografia ------------------------------------------------------------------
-set nospell      " Negado para o mapeamento da correção ortográfica...
+set nospell 
 set spelllang=pt_br,en
 " Menu do modo insert ---------------------------------------------------------
 set complete+=kspell
 set completeopt=menuone,longest
 set shortmess+=c
 " Esquema de cores ------------------------------------------------------------
-" https://github.com/sainnhe/edge.git 
-" set background=dark
-" colorscheme edge
-" -----------------------------------------------------------------------------
 colorscheme habamax
 " Arquivos externos -----------------------------------------------------------
 execute 'source '.$RCPATH.fnameescape('autocmds.vim')
@@ -82,5 +79,8 @@ execute 'source '.$RCPATH.fnameescape('mappings.vim')
 " -----------------------------------------------------------------------------
 execute 'source '.$RCPATH.fnameescape('icomplete.vim')
 " -----------------------------------------------------------------------------
-"
-"
+
+call plug#begin()
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+
+call plug#end()
