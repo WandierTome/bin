@@ -84,3 +84,13 @@ call plug#begin()
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 call plug#end()
+
+" Disable math tex conceal feature
+let g:tex_conceal = ''
+let g:vim_markdown_math = 1
+
+" Markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_fenced_languages = ['tsx=typescriptreact']
