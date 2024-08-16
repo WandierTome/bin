@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------------------------------
+# Script    : run_desktop
+# Descrição : Para move-se entre aa áreas de trabalho
+# Autor     : Wandier Tome <wad.tome@gmail.com>
+# Data      : 16-08-2024
+# Versão    : 0.0.1
+# -----------------------------------------------------------------------------
+#!/usr/bin/env bash
+
+IDESKTOP=$(xdotool get_desktop) # Índice atual
+NDESKTOP=$(xdotool get_num_desktops) # Número desktop
+
+desk_prev() {
+	[[ $(( $IDESKTOP - 1 )) -lt 0 ]] && prev=$(( $NDESKTOP - 1 )) || prev=$(( $IDESKTOP - 1 ))
+	xdotool set_desktop $prev
+	xfce4-panel --plugin-event=genmon-16:refresh:bool:true
+}
+
+desk_next() {
+	xdotool set_desktop --relative 1
+	xfce4-panel --plugin-event=genmon-16:refresh:bool:true
+}
+
+desk_current() {
+	echo "<txt>$(( $IDESKTOP +1 ))</txt>"
+	echo "<txtclick>xdotool key ctrl+alt+d</txtclick>"
+}
+case $1 in
+	"next") desk_next
+		;;
+	"prev") desk_prev
+		;;
+	"show") desk_current
+		;;
+esac
